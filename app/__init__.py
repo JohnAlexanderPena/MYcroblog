@@ -1,17 +1,8 @@
 from flask import Flask
-
+from config import Config
 
 #set to the name of the module being used
 app = Flask(__name__)
-
-
-@app.route("/")
-
-def hello():
-    return "WOooooow Chechj it oeute!"
-
-if __name__ == "__main__":
-    app.run()
-
+app.config.from_object(Config)
 
 from app import routes
